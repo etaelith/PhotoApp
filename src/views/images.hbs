@@ -1,0 +1,42 @@
+{{!--<style>
+    .swiper-container {
+        width: 500px;
+        height: 400px;
+    }
+</style>
+--}}
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        {{#each photos}}
+        <img src="{{imageURL}}" alt="" class="swiper-slide img-fluid">
+        {{/each}}
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<div class="row row-cols-1 row-cols-md-3">
+    {{#each photos}}
+    <div class="col mb-4">
+    <div class="card">
+        <img src="{{imageURL}}" class="card-img-top" alt="Pet">
+        <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{type}}</p>
+            <p class="card-text">{{raza}}</p>
+            <p class="card-text"><small class="text-muted">{{description}}</small></p>
+        </div>
+    </div>
+    </div>
+    {{/each}}
+</div>
